@@ -1,72 +1,74 @@
 
-# Business problem:
+## Business problem
 
 Luxury fashion retailer wants to better manage their stock and promotions, therefore the business needs help with understanding their current customer behaviour to make data driven decisions. 
 
 
-# Project Overview
-The project highlights the impact of Airbnb on residential communities.  We have compiled comprehensive quarterly data on Airbnb rentals, segmented by major cities worldwide. This includes detailed information on average income, pricing, listings, and reviews.
-We aim to use this data to answer key business questions about Airbnb market economy.
+## Project Overview
+
+Fashion retailer needs help with understanding their current customer behaviour to make data driven stock and promotion decisions. This analysis determines the current customer trends in style, colour and product choice based on customer age and gender.
 
 
 
-### Example beneficiaries of this data analysis include:  
-We have collected data from kaggle and extracted 4 different datasheets containing primary customer details, customer orders, products and sales. Each table contains 
+## Example beneficiaries of this data analysis include
 
-## :question:`Business Questions
-The business questions will help us uncover insights that address the problem statement and provide analysis based on Inside Airbnb’s available datasets.
+We have collected data from kaggle and extracted 4 different datasheets containing primarily customer details, customer orders, products and sales. Each table contains description of products eg, product names, product type, customer gender, customer age, price, total quantity.
 
-1.How many listings in each city?
-2.How are these listings distributed within the city?
-3.How the distribution of room types differs significantly between neighbourhoods.
-4.Comparative study of Top 10 popular neighbourhoodsof each city.
-5.What is the price distribution in each city?
-6.What is the average/max/min price in each city?
-7.How do the cities compare?
-8.What are the price trends over the last four quarters?
-9.Are there differences in amount of listings/price between regulated (e.g. Berlin, Barcelona) and unregulated (Prague, Vienna) cities?
-
-### **EDA - 1️⃣ Hypothesis**
-
-**Variables used:**
-
-- cities;
-- neighbourhood;
-- room_types.
+## :question:`Hypothesis
+The hypothesis will help us uncover insights that address the problem statement and provide analysis based on the available datasets.
 
 
-![Data Visualization](EDA/EDA_visualizations/Countplot1.png)
-*Comparison of top 10 neighborhoods of 6 cities on the basis of listings*
+### **EDA - 1️ Hypothesis**
+1.Certain styles in each product category are more popular than others, highlighting a current trend.
+**Tables used:**
 
-![Data Visualization](EDA/EDA_visualizations/Stackedplot1.png)
-*Comparison of top room-types of 6 cities*
+- sales(total_quantity);
+- products(product_name, product_type);
+- customers(age_group).
+![hypo1](https://github.com/user-attachments/assets/3036219a-b052-4580-bee3-4033f37b9c02)
+
+
+![hypo_3](https://github.com/user-attachments/assets/bbbce583-3cec-42de-aadb-1971318d2f0d)
 
 
 
+### **EDA - 2 Hypothesis**
+2.The demand for certain styles differs between customers aged 18-35 and customers above the age of 35
+**Tables used:**
+
+- orders(quantity);
+- products(colour, product_type);
+- customers(age_group).
+![hypo_2](https://github.com/user-attachments/assets/761f9e15-e52d-4f62-ac97-2de4e0fbba0d)
+
+- 
   
-## :goal_net: Goals
-1. Answer all business questions using datasets of 6 different cities.
-2. Provide statistical analysis to visualize key business questions.
+### **EDA - 3 Hypothesis**
+3.There is a distinct difference in colour preference based on the gender of customers.
 
-## Scope
-Top 6 EU cities by population (Paris, London, Madrid, Barcelona, Istanbul and Rome). 
+- orders(quantity);
+- products(colour, product_type);
+- customers(gender).
+![scatter_hyp_2](https://github.com/user-attachments/assets/1ad63e60-7676-40bb-ad93-b3abca7bb006)
+
+- 
+   
 
 ## Milestones
-1.Project Preparation
-  Organize the project team
-  Create Kanban board
-2.Define problem statement
-  Identify Business Questions
-3.Code Review and Testing
-  Review code from Local and Dev branches. 
-  Once reviewed and approved, merge into Main branch.  
-4.Presentation
-  Prepare presentation
+
+  1. Project Preparation-Organize the project team-Create Notion board
+     
+  2. Define problem statement-Identify Business Question
+  3. Code Review and Testing-Review code from Local and Dev branches-Once reviewed and approved, merge 
+     into Main branch
+  4. Presentation
+  
 
 ## :toolbox: Tools and Technologies Used
 
-- Python: The main programming language used for data processing, analysis, and visualization.
-- Jupyter Notebook: Used for data cleaning, merging datasets, estimating the adoption curve, and addressing the project questions.
+- Mysql workbench: We created the Entity-Relationship Model, followed by data transformation processing steps. These steps involved merging, grouping, and cleaning all datasets, and filtering the data to best test our hypothesis through MySQL.
+- Python: The main programming language used for data visualization.
+- Jupyter Notebook: Used for data visualization and addressing the project questions.
 - Plotly python graphing library
 
 ## Project Structure
@@ -74,23 +76,18 @@ Top 6 EU cities by population (Paris, London, Madrid, Barcelona, Istanbul and Ro
 The project structure is as follows:
 
 - `notebooks/main.py`: The Jupyter Notebook containing the data processing, analysis, and visualization code.
+- data.sql: SQL files containing all proceesed data and information.
 - `data/`: A folder containing the dataset files obtained from the IEA.
 - `app/`: A folder containing the application code for creating the project dashboard.
 - `requirements.txt`: A file specifying the dependencies required to run the project.
 
-##
 
 ## Conclusion
 
 This data project provides insights on-
 
-1.Average prices are higher in cities with higher cost of living index.
 
-2.To conclude the price patterns regarding summer/winter periods, more data is needed.
-
-3.The listings are concentrated in touristic locations and by the airport, which shows 
-  that there is demand for these locations in particular. 
 
 ### Link
-(https://insideairbnb.com/get-the-data/and)
+https://www.kaggle.com/datasets/ruchi798/shopping-cart-database
   
