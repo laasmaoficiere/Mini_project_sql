@@ -1,9 +1,12 @@
+
+# Importing the required libraries
 import pandas as pd
 import plotly.express as px
 import seaborn as sns
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 
+#Connecting to the MySQL database
 user = "root"
 password = "new_password"
 host = "127.0.0.1"
@@ -12,6 +15,8 @@ db = "Project_2"
 from sqlalchemy import create_engine
 engine = create_engine(f'mysql+mysqlconnector://{user}:{password}@{host}:{port}/{db}')
 
+# This function is used to import the first query from the database
+# This query is used to find the total quantity of products sold by product name and product type for different age groups
 def hypo_1():
     query_1 = """
     SELECT
@@ -32,26 +37,21 @@ def hypo_1():
             sales.quantity,
             products.product_name,
             products.product_type
-        FROM
-            customers
-        JOIN
-            orders ON customers.customer_id = orders.customer_id
-        JOIN
-            sales ON orders.order_id = sales.order_id
-        JOIN
-            products ON sales.product_id = products.product_id
+        FROM customers
+        JOIN orders ON customers.customer_id = orders.customer_id
+        JOIN sales ON orders.order_id = sales.order_id
+        JOIN products ON sales.product_id = products.product_id
     ) AS subquery
-    GROUP BY
-        age_group, product_type, product_name
-    ORDER BY
-        age_group, product_type;
+    GROUP BY age_group, product_type, product_name
+    ORDER BY age_group, product_type;
     """
     df_1 = pd.read_sql(query_1, con=engine)
     return df_1
 
 
 
-
+# This function is used to import the second query from the database
+# This query is used to find the total quantity of products sold per gender and colour
 def hypo_2():
     query_2 = """
     SELECT
@@ -66,25 +66,20 @@ def hypo_2():
             sales.product_id,
             sales.quantity,
             products.colour
-        FROM
-            customers
-        JOIN
-            orders ON customers.customer_id = orders.customer_id
-        JOIN
-            sales ON orders.order_id = sales.order_id
-        JOIN
-            products ON sales.product_id = products.product_id
+        FROM customers
+        JOIN orders ON customers.customer_id = orders.customer_id
+        JOIN sales ON orders.order_id = sales.order_id
+        JOIN products ON sales.product_id = products.product_id
     ) AS subquery
-    GROUP BY
-        gender, colour
-    ORDER BY
-        gender, colour;
+    GROUP BY gender, colour
+    ORDER BY gender, colour;
     """
 
     df_2 = pd.read_sql(query_2, con=engine)
     return df_2
 
-
+# This function is used to import the third query from the database
+# This query is used to find the minimum, maximum, and average price of products sold by product category
 def hypo_3():
     query_3 = """
     SELECT
@@ -104,6 +99,8 @@ def hypo_3():
     return df_3
 
 
+# This function is used to visualise the data from the first query
+# It creates a bar chart to show the total quantity of products sold by product name and product type
 def visualize_bar(df_1):
     fig_bar = px.bar(df_1, x='product_name', y='total_quantity', color='product_type', 
                      title='Total Quantity by Product Name and Product Type',
@@ -111,6 +108,8 @@ def visualize_bar(df_1):
     fig_bar.show()
 
 
+# This function is used to visualise the data from the first query
+# It creates a scatter plot to show the total quantity of products sold by product name and product type for different age groups
 def visualize_scatter(df_1):
     fig = px.scatter(df_1, x='product_name', y='total_quantity', color='product_type', symbol='age_group',
                  title='Total Quantity by Product Name, Product Type, and Age Group',
@@ -127,11 +126,15 @@ def visualize_scatter(df_1):
 
     fig.show()    
 
+# This function is used to visualise the data from the first query
+# It creates a treemap to show the distribution of product type and product type
 def visualize_tree(df_1):
     fig_treemap = px.treemap(df_1, path=['product_type', 'product_name'], values='total_quantity', 
                          title='Product Type and Product Name Distribution')
     fig_treemap.show()
 
+# This function is used to visualise the data from the second query
+# It creates a scatter plot to show the total quantity of colours sold based on gener
 def visualize_scatter1(df_2):
     custom_colors = {
     'red': 'rgb(255, 0, 0)',
@@ -142,7 +145,6 @@ def visualize_scatter1(df_2):
     'violet': 'rgb(238, 130, 238)',
     'yellow': 'rgb(255, 255, 0)'
 }
-
 
 # Scatter plot with custom colors
     fig_scatter = px.scatter(df_2, x='gender', y='total_quantity', color='colour', size='total_quantity',
