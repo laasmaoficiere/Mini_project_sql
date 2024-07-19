@@ -33,8 +33,6 @@ The hypothesis will help us uncover insights that address the problem statement 
 ![hypo1](https://github.com/user-attachments/assets/3036219a-b052-4580-bee3-4033f37b9c02)
 
 
-![hypo_3](https://github.com/user-attachments/assets/bbbce583-3cec-42de-aadb-1971318d2f0d)
-
 
 
 ### **EDA - 2 Hypothesis**
@@ -46,7 +44,7 @@ The hypothesis will help us uncover insights that address the problem statement 
 - customers(age_group).
 ![hypo_2](https://github.com/user-attachments/assets/761f9e15-e52d-4f62-ac97-2de4e0fbba0d)
 
-- 
+  
   
 ### **EDA - 3 Hypothesis**
 3.There is a distinct difference in colour preference based on the gender of customers.
@@ -56,7 +54,7 @@ The hypothesis will help us uncover insights that address the problem statement 
 - customers(gender).
 ![scatter_hyp_2](https://github.com/user-attachments/assets/1ad63e60-7676-40bb-ad93-b3abca7bb006)
 
-- 
+  
    
 
 ## Milestones
