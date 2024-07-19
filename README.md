@@ -14,6 +14,11 @@ Fashion retailer needs help with understanding their current customer behaviour 
 
 We have collected data from kaggle and extracted 4 different datasheets containing primarily customer details, customer orders, products and sales. Each table contains description of products eg, product names, product type, customer gender, customer age, price, total quantity.
 
+## ERM
+<img width="687" alt="Screenshot 2024-07-19 at 08 25 45" src="https://github.com/user-attachments/assets/18de1eae-939a-43bc-a732-6af117736ba6">
+
+
+
 ## :question:`Hypothesis
 The hypothesis will help us uncover insights that address the problem statement and provide analysis based on the available datasets.
 
@@ -84,7 +89,8 @@ The project structure is as follows:
 
 ## Conclusion
 
-This data project provides insights on-
+As this is synthetic data, it can be useful as a learning data for the technical part of the project but lacks in valuable use as analysis material.MySQL and Python relation this project could take on a larger more complex data set to create more advanced queries or combine the existing analysis with additional data.
+
 
 
 
