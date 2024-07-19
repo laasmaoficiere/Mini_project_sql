@@ -86,8 +86,7 @@ The project structure is as follows:
 
 
 ## Conclusion
-
-As this is synthetic data, it can be useful as a learning data for the technical part of the project but lacks in valuable use as analysis material.MySQL and Python relation this project could take on a larger more complex data set to create more advanced queries or combine the existing analysis with additional data.
+Our hypothesis confirmed that there are differences in style and product preferences based on age and gender. These insights can assist the business in targeting promotional activities, capitalizing on current trends, and improving stock management. However, since this is synthetic data, it serves well for the technical aspects of the project but lacks significant value for real-world analysis. Utilizing MySQL and Python in this project demonstrates their effectiveness, and the approach could be expanded to handle larger, more complex datasets. This would enable the creation of more advanced queries or the integration of additional data for enhanced analysis.
 
 
 
